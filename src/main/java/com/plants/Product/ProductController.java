@@ -23,6 +23,12 @@ public class ProductController {
         return new ResponseEntity<>(productDto, HttpStatus.CREATED);
     }
 
+    @PutMapping("{productId}")
+    public ResponseEntity<ProductDto> create(@PathVariable UUID productId, @Valid @RequestBody ProductCreateDto productCreateDto) {
+        Product product = productService.update(productId, productCreateDto);
+        return ResponseEntity.ok(productMapper.to(product));
+    }
+
     @GetMapping
     public ResponseEntity<List<ProductDto>> index() {
         List<Product> products = productService.findAll();

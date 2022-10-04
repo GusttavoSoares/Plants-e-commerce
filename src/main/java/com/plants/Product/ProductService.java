@@ -26,6 +26,17 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+    public Product update(UUID productId, ProductCreateDto productCreateDto) {
+        Optional<Product> product = findById(productId);
+
+        product.get().setName(productCreateDto.getName());
+        product.get().setDescription(productCreateDto.getDescription());
+        product.get().setQuantity(productCreateDto.getQuantity());
+        product.get().setImage(productCreateDto.getImage());
+
+        return productRepository.save(product.get());
+    }
+
     public List<Product> findAll() {
         return productRepository.findAll();
     }
