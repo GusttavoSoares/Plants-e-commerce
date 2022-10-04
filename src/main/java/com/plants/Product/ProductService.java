@@ -34,4 +34,8 @@ public class ProductService {
         return productRepository.findById(productId);
         // TODO - add validation when not found
     }
+
+    public void delete(UUID productId) {
+        productRepository.deleteById(productId);
+    }
 }
