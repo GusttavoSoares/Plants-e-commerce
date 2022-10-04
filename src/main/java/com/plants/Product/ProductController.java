@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
@@ -18,5 +19,11 @@ public class ProductController {
         Product product = productService.create(productCreateDto);
         ProductDto productDto = productMapper.to(product);
         return new ResponseEntity<>(productDto, HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ProductDto>> index() {
+        List<Product> products = productService.findAll();
+        return ResponseEntity.ok(productMapper.to(products));
     }
 }

@@ -3,6 +3,8 @@ package com.plants.Product;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ProductService {
@@ -20,5 +22,9 @@ public class ProductService {
         );
 
         return productRepository.save(product);
+    }
+
+    public List<Product> findAll() {
+        return productRepository.findAll();
     }
 }
