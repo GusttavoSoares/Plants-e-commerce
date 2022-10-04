@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @PutMapping("{productId}")
-    public ResponseEntity<ProductDto> create(@PathVariable UUID productId, @Valid @RequestBody ProductCreateDto productCreateDto) {
+    public ResponseEntity<ProductDto> update(@PathVariable UUID productId, @Valid @RequestBody ProductCreateDto productCreateDto) {
         Product product = productService.update(productId, productCreateDto);
         return ResponseEntity.ok(productMapper.to(product));
     }

@@ -3,5 +3,6 @@ CREATE TABLE products(
     name VARCHAR NOT NULL UNIQUE,
     description VARCHAR NOT NULL,
     quantity SMALLINT NOT NULL,
+    type VARCHAR NOT NULL,
     image VARCHAR NOT NULL
 )

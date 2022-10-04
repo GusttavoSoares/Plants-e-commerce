@@ -2,6 +2,7 @@ package com.plants.Product;
 
 import lombok.Value;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 @Value
@@ -18,8 +19,10 @@ public class ProductCreateDto {
    @Min(value = 1)
    @Max(value = 9999)
    Integer quantity;
+   @Valid
+   @NotNull
+   ProductType type;
    @NotNull
    @NotBlank
    String image;
-   // TOOD - Add enum type
 }

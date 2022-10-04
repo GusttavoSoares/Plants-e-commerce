@@ -12,6 +12,6 @@ public class ProductDto {
     String name;
     String description;
     Integer quantity;
+    ProductType type;
     String image;
-    // TOOD - add enum type
 }

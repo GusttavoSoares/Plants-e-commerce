@@ -20,6 +20,7 @@ public class ProductService {
                 productCreateDto.getName(),
                 productCreateDto.getDescription(),
                 productCreateDto.getQuantity(),
+                productCreateDto.getType(),
                 productCreateDto.getImage()
         );
 
@@ -32,6 +33,7 @@ public class ProductService {
         product.get().setName(productCreateDto.getName());
         product.get().setDescription(productCreateDto.getDescription());
         product.get().setQuantity(productCreateDto.getQuantity());
+        product.get().setType(productCreateDto.getType());
         product.get().setImage(productCreateDto.getImage());
 
         return productRepository.save(product.get());
