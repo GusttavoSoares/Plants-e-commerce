@@ -24,7 +24,6 @@ public class Product {
     private ProductType type;
     private String image;
 
-
     public Product(String name, String description, int quantity, ProductType type, String image) {
         this.id = UUID.randomUUID();
         this.name = name;

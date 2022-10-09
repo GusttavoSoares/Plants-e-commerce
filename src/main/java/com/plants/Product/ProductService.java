@@ -1,6 +1,8 @@
 package com.plants.Product;
 
+import com.plants.exceptions.ResourceAlreadyExistsException;
 import lombok.AllArgsConstructor;
+import org.flywaydb.core.internal.resource.ResourceName;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +16,9 @@ public class ProductService {
 
     public Product create(ProductCreateDto productCreateDto) {
 
-        //TODO - productexistsybytitle validation
+        if(productRepository.existsByName(productCreateDto.getName())) {
+            throw new ResourceAlreadyExistsException("product", "name", productCreateDto.getName());
+        }
 
         Product product = new Product(
                 productCreateDto.getName(),
