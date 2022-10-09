@@ -22,7 +22,7 @@ public class Product {
     private int quantity;
     @Enumerated(EnumType.STRING)
     private ProductType type;
-    private String image;
+    private String image; // TODO - search how to add image
 
     public Product(String name, String description, int quantity, ProductType type, String image) {
         this.id = UUID.randomUUID();

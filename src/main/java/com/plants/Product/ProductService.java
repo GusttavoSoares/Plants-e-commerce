@@ -33,6 +33,9 @@ public class ProductService {
     public Product update(UUID productId, ProductCreateDto productCreateDto) {
         Product product = findById(productId);
 
+        if(productRepository.existsByNameAndIdNot(productCreateDto.getName(), productId)) {
+            throw new ResourceAlreadyExistsException("product", "name", productCreateDto.getName());
+        }
 
         product.setName(productCreateDto.getName());
         product.setDescription(productCreateDto.getDescription());
@@ -51,8 +54,8 @@ public class ProductService {
         return productRepository.findById(productId)
                 .orElseThrow(() -> new ResourceNotFoundException("product", productId));
     }
-
     public void delete(UUID productId) {
+        Product product = findById(productId);
         productRepository.deleteById(productId);
     }
 }
