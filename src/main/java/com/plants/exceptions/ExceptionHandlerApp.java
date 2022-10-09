@@ -30,4 +30,22 @@ public class ExceptionHandlerApp {
         return new ResponseEntity(problemDetail, HttpStatus.CONFLICT);
     }
 
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ProblemDetail> handlerResourceNotFOundException(
+            ResourceNotFoundException ex,
+            HttpServletRequest request
+    ) {
+        String message = String.format(
+                "%s with id: %s not found",
+                ex.getResourceName(),
+                ex.getResourceId()
+        );
+        ProblemDetail problemDetail = new ProblemDetail(
+                "Resource not found",
+                List.of(new Violation(ex.getResourceName(), message))
+        );
+
+        return new ResponseEntity(problemDetail, HttpStatus.CONFLICT);
+    }
 }
+

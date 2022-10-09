@@ -37,8 +37,8 @@ public class ProductController {
 
     @GetMapping("{productId}")
     public ResponseEntity<ProductDto> show(@PathVariable UUID productId) {
-        Optional<Product> productDto = productService.findById(productId);
-        return ResponseEntity.ok(productMapper.to(productDto.get()));
+        Product productDto = productService.findById(productId);
+        return ResponseEntity.ok(productMapper.to(productDto));
     }
 
     @DeleteMapping("{productId}")
