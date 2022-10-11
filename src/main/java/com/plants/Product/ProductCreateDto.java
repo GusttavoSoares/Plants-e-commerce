@@ -4,6 +4,7 @@ import lombok.Value;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import java.math.BigDecimal;
 
 @Value
 public class ProductCreateDto {
@@ -19,6 +20,9 @@ public class ProductCreateDto {
    @Min(value = 1)
    @Max(value = 9999)
    Integer quantity;
+   @NotNull
+   /* TODO - add validation to min and max */
+   BigDecimal price;
    @Valid
    @NotNull
    ProductType type;

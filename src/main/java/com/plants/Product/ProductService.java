@@ -23,6 +23,7 @@ public class ProductService {
                 productCreateDto.getName(),
                 productCreateDto.getDescription(),
                 productCreateDto.getQuantity(),
+                productCreateDto.getPrice(),
                 productCreateDto.getType(),
                 productCreateDto.getImage()
         );
