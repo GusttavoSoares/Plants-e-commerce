@@ -4,6 +4,7 @@ import com.plants.exceptions.ResourceAlreadyExistsException;
 import com.plants.exceptions.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,8 +25,8 @@ public class ProductService {
                 productCreateDto.getDescription(),
                 productCreateDto.getQuantity(),
                 productCreateDto.getPrice(),
-                productCreateDto.getType(),
-                productCreateDto.getImage()
+                productCreateDto.getType()
+//                productCreateDto.getImage().getBytes()
         );
 
         return productRepository.save(product);
@@ -42,7 +43,7 @@ public class ProductService {
         product.setDescription(productCreateDto.getDescription());
         product.setQuantity(productCreateDto.getQuantity());
         product.setType(productCreateDto.getType());
-        product.setImage(productCreateDto.getImage());
+//        product.setImage(productCreateDto.getImage().getBytes());
 
         return productRepository.save(product);
     }

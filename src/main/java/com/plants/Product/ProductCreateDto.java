@@ -26,7 +26,7 @@ public class ProductCreateDto {
    @Valid
    @NotNull
    ProductType type;
-   @NotNull
-   @NotBlank
-   String image;
+//   @NotNull
+//   @NotBlank
+//   String image;
 }

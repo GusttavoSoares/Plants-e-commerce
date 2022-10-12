@@ -4,6 +4,5 @@ CREATE TABLE products(
     description VARCHAR NOT NULL,
     quantity SMALLINT NOT NULL,
     price NUMERIC NOT NULL,
-    type VARCHAR NOT NULL,
-    image VARCHAR NOT NULL
+    type VARCHAR NOT NULL
 )

@@ -15,5 +15,5 @@ public class ProductDto {
     Integer quantity;
     BigDecimal price;
     ProductType type;
-    String image;
+//    String image;
 }

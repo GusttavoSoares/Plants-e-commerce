@@ -24,15 +24,16 @@ public class Product {
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private ProductType type;
-    private String image; // TODO - search how to add image
+//    @Lob
+//    private byte[] image; // TODO - search how to add image
 
-    public Product(String name, String description, int quantity, BigDecimal price, ProductType type, String image) {
+    public Product(String name, String description, int quantity, BigDecimal price, ProductType type/*, byte[] image */) {
         this.id = UUID.randomUUID();
         this.name = name;
         this.description = description;
         this.quantity = quantity;
         this.price = price;
         this.type = type;
-        this.image = image;
+//        this.image = image;
     }
 }
