@@ -16,6 +16,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class Product {
+
     @Id
     private UUID id;
     private String name;

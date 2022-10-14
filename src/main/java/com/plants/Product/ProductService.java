@@ -4,7 +4,6 @@ import com.plants.exceptions.ResourceAlreadyExistsException;
 import com.plants.exceptions.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.UUID;
@@ -57,7 +56,7 @@ public class ProductService {
                 .orElseThrow(() -> new ResourceNotFoundException("product", productId));
     }
     public void delete(UUID productId) {
-        Product product = findById(productId);
+        findById(productId); // TODO - change to not return a value
         productRepository.deleteById(productId);
     }
 }

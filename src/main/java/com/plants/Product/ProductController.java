@@ -12,9 +12,12 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/products")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class ProductController {
+
     private final ProductService productService;
     private final ProductMapper productMapper;
+
     @PostMapping
     public ResponseEntity<ProductDto> create(@Valid @RequestBody ProductCreateDto productCreateDto) {
         Product product = productService.create(productCreateDto);

@@ -9,6 +9,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 public class ProductDto {
+
     UUID id;
     String name;
     String description;

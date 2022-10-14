@@ -53,6 +53,7 @@ public class ExceptionHandlerApp {
                 ex.getResourceName(),
                 ex.getResourceId()
         );
+
         ProblemDetail problemDetail = new ProblemDetail(
                 "Resource not found",
                 List.of(new Violation(ex.getResourceName(), message))
@@ -61,4 +62,3 @@ public class ExceptionHandlerApp {
         return new ResponseEntity(problemDetail, HttpStatus.CONFLICT);
     }
 }
-

@@ -1,6 +1,7 @@
 package com.plants.Product;
 
 public enum ProductType {
+
     BUSHES,
     CLIMBERS,
     FERN,

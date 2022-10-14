@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 
 @Value
 public class ProductCreateDto {
+
    @NotNull
    @NotBlank
    @Size(min = 5, max = 60)
